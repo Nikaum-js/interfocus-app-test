@@ -48,9 +48,7 @@ npm install
 
 3. Inicie o servidor de desenvolvimento:
 ```bash
-yarn start
-# ou
-npm start
+  npx expo start 
 ```
 
 4. Siga as instruções do Expo CLI para executar o aplicativo na plataforma desejada (iOS/Android)
