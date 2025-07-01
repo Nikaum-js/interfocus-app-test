@@ -6,11 +6,13 @@ import { Text } from '@/components/Text';
 import { useColorScheme } from '@/hooks/useColorScheme';
 import { Colors } from '@/constants/Colors';
 import { useAuth } from '@/hooks/useAuth';
+import { useRouter } from 'expo-router';
 
 export default function SettingsScreen() {
   const colorScheme = useColorScheme();
   const colors = Colors[colorScheme ?? 'dark'];
   const { user, logout } = useAuth();
+  const router = useRouter(); 
 
   const handleLogout = () => {
     Alert.alert(
@@ -23,6 +25,7 @@ export default function SettingsScreen() {
           style: 'destructive',
           onPress: async () => {
             await logout();
+            router.replace('/login');
             Alert.alert('Sucesso', 'Logout realizado com sucesso!');
           }
         }
