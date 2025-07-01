@@ -1,50 +1,88 @@
-# Welcome to your Expo app 👋
+# Teste Interfocus
 
-This is an [Expo](https://expo.dev) project created with [`create-expo-app`](https://www.npmjs.com/package/create-expo-app).
+Uma aplicação mobile de gerenciamento de tarefas desenvolvida com React Native e Expo, com autenticação OAuth 2.0 através do Sistema de Autenticação Interfocus (IAS).
 
-## Get started
+## ✨ Principais Funcionalidades
 
-1. Install dependencies
+- **Autenticação OAuth 2.0**: Login seguro através do Sistema de Autenticação Interfocus
+- **Gerenciamento Pessoal de Tarefas**: Listas de tarefas individuais para cada usuário
+- **Geração Automática de Tarefas**: 50 tarefas de exemplo criadas para novos usuários
+- **Operações com Tarefas**:
+  - Criar novas tarefas com título e descrição
+  - Visualizar tarefas ordenadas por data de criação
+  - Expandir tarefas para ver detalhes
+  - Seleção múltipla de tarefas através de pressão longa
+  - Excluir tarefas (com simulação assíncrona de 1 segundo)
+  - Marcar tarefas como concluídas
+- **Filtragem de Tarefas**: Filtrar por status (abertas, concluídas ou todas)
+- **Interface Responsiva**: Interface intuitiva e amigável
 
-   ```bash
-   npm install
-   ```
+## 🔐 Detalhes da Autenticação
 
-2. Start the app
+A aplicação utiliza autenticação OAuth 2.0 com os seguintes endpoints:
 
-   ```bash
-   npx expo start
-   ```
+- **Autorização**: `https://ias.interfocus.com.br/authorize`
+- **Token**: `https://auth.interfocus.com.br/api/oauth/token`
 
-In the output, you'll find options to open the app in a
+### Pré-requisitos
 
-- [development build](https://docs.expo.dev/develop/development-builds/introduction/)
-- [Android emulator](https://docs.expo.dev/workflow/android-studio-emulator/)
-- [iOS simulator](https://docs.expo.dev/workflow/ios-simulator/)
-- [Expo Go](https://expo.dev/go), a limited sandbox for trying out app development with Expo
+- Node.js (última versão LTS)
+- Expo CLI
+- Simulador iOS ou Emulador Android
+- Yarn ou npm
 
-You can start developing by editing the files inside the **app** directory. This project uses [file-based routing](https://docs.expo.dev/router/introduction).
+### Instalação
 
-## Get a fresh project
-
-When you're ready, run:
-
+1. Clone o repositório:
 ```bash
-npm run reset-project
+git clone https://github.com/Nikaum-js/interfocus-app-test.git
+cd interfocus-app-test
 ```
 
-This command will move the starter code to the **app-example** directory and create a blank **app** directory where you can start developing.
+2. Instale as dependências:
+```bash
+yarn install
+# ou
+npm install
+```
 
-## Learn more
+3. Inicie o servidor de desenvolvimento:
+```bash
+yarn start
+# ou
+npm start
+```
 
-To learn more about developing your project with Expo, look at the following resources:
+4. Siga as instruções do Expo CLI para executar o aplicativo na plataforma desejada (iOS/Android)
 
-- [Expo documentation](https://docs.expo.dev/): Learn fundamentals, or go into advanced topics with our [guides](https://docs.expo.dev/guides).
-- [Learn Expo tutorial](https://docs.expo.dev/tutorial/introduction/): Follow a step-by-step tutorial where you'll create a project that runs on Android, iOS, and the web.
+## 🛠️ Stack Técnica
 
-## Join the community
+- **Framework Principal**: React Native v0.79.4 com TypeScript
+- **Plataforma de Desenvolvimento**: Expo SDK 53
+- **Autenticação e Segurança**:
+  - OAuth 2.0 com expo-auth-session
+  - Armazenamento seguro com expo-secure-store
+  - AsyncStorage para persistência de dados
+- **UI/UX**:
+  - Expo Router para navegação
+  - React Native Reanimated para animações
+  - Expo Linear Gradient para efeitos visuais
+  - Expo Blur para efeitos de vidro
+  - Expo Haptics para feedback tátil
+  - Fontes personalizadas com Expo Font (Poppins)
+- **Gerenciamento de Estado**: Context API do React com hooks personalizados
+- **Estilização**: StyleSheet nativo do React Native
+- **Desenvolvimento**:
+  - ESLint para padronização de código
+  - TypeScript para tipagem estática
+  - Expo Dev Client para desenvolvimento
 
-Join our community of developers creating universal apps.
+## 📱 Estrutura da Aplicação
 
-- [Expo on GitHub](https://github.com/expo/expo): View our open source platform and contribute.
-- [Discord community](https://chat.expo.dev): Chat with Expo users and ask questions.
+A aplicação segue uma arquitetura modular com os seguintes componentes principais:
+
+- **Fluxo de Autenticação**: Gerencia a integração OAuth 2.0 com IAS
+- **Gerenciamento de Tarefas**: Funcionalidade principal para operações CRUD em tarefas
+- **Componentes de UI**: Componentes reutilizáveis para interface consistente
+- **Gerenciamento de Estado**: Manipulação centralizada do estado dos dados
+- **Navegação**: Navegação e roteamento entre telas

@@ -1,26 +1,56 @@
-/**
- * Below are the colors that are used in the app. The colors are defined in the light and dark mode.
- * There are many other ways to style your app. For example, [Nativewind](https://www.nativewind.dev/), [Tamagui](https://tamagui.dev/), [unistyles](https://reactnativeunistyles.vercel.app), etc.
- */
 
-const tintColorLight = '#0a7ea4';
-const tintColorDark = '#fff';
+
+export const DarkColors = {
+  background: "#07061D", 
+  cottonCandy: "#66D9EF",
+  lemon: "#2DFF0B",
+  gum: "#FD78C4",
+  pistachio: "#D3FFCC",
+  cream: "#E2DFCD",
+  foam: "#D7DAE2",
+  snow: "#FFFFFF",
+  tabBorder: "#DCFFD6", 
+} as const;
+
+export const LightColors = {
+  background: "#FFFFFF",
+  primary: "#4A90E2", 
+  secondary: "#E91E63", 
+  accent: "#4CAF50", 
+  surface: "#F5F5F5",
+  text: "#212121",
+  textSecondary: "#757575",
+  border: "#E0E0E0",
+  tabBorder: "#E0E0E0", 
+} as const;
 
 export const Colors = {
   light: {
-    text: '#11181C',
-    background: '#fff',
-    tint: tintColorLight,
-    icon: '#687076',
-    tabIconDefault: '#687076',
-    tabIconSelected: tintColorLight,
+    text: LightColors.text,
+    background: LightColors.background,
+    tint: LightColors.primary,
+    icon: LightColors.textSecondary,
+    tabIconDefault: LightColors.textSecondary,
+    tabIconSelected: LightColors.primary,
+    primary: LightColors.primary,
+    secondary: LightColors.secondary,
+    accent: LightColors.accent,
+    surface: LightColors.surface,
+    border: LightColors.border,
+    tabBorder: LightColors.tabBorder,
   },
   dark: {
-    text: '#ECEDEE',
-    background: '#151718',
-    tint: tintColorDark,
-    icon: '#9BA1A6',
-    tabIconDefault: '#9BA1A6',
-    tabIconSelected: tintColorDark,
+    text: DarkColors.foam,
+    background: DarkColors.background,
+    tint: DarkColors.cottonCandy,
+    icon: DarkColors.foam,
+    tabIconDefault: DarkColors.foam,
+    tabIconSelected: DarkColors.cottonCandy,
+    primary: DarkColors.cottonCandy,
+    secondary: DarkColors.gum,
+    accent: DarkColors.lemon,
+    surface: DarkColors.cream,
+    muted: DarkColors.pistachio,
+    tabBorder: DarkColors.tabBorder,
   },
 };
